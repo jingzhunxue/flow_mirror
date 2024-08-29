@@ -1,7 +1,10 @@
- [Update] 8.29 创建仓库， 发布 README & Roadmap
+ [Update] 
+ 
+ 8.29 创建仓库， 发布 README & Roadmap
 
 ## 动机
 尽管文本在互联网上是主要的语言形态，但许多场景如教学授课和医生问诊仍主要采用直接语音交流。此外，低龄儿童或不具备读写能力的人通过听说能力能够进行广泛的交流和表达，显示出纯语音交流具备足够的智能沟通能力。语音（Textless）交流天然包含丰富的表达信息，这在教育培训等场景中，相比纯粹的ASR文字转换，具有更高的信息价值。
+
 同时，本项目也受到 OpenAI 发布的 GPT-4o 和其展示的教育场景中的演示视频展现的能力的启发。
 
 ## 团队
@@ -16,16 +19,16 @@
 - SpeechGPT: Zhang et al. (2023) 强化了大型语言模型的内在跨模态对话能力。[详细信息][5]
 - SpeechFlow: Liu et al. (2024) 介绍了一种配合流匹配的语音生成预训练方法。[详细信息][6]
 
-[1]: ~[https://arxiv.org/abs/2305.15255](https://arxiv.org/abs/2305.15255)~ "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM"
-[2]: ~[https://arxiv.org/abs/2402.05755](https://arxiv.org/abs/2402.05755)~ "SpiRit-LM: Interleaved Spoken and Written Language Model"
-[3]: ~[https://arxiv.org/abs/2102.01192](https://arxiv.org/abs/2102.01192)~ "Generative Spoken Language Modeling from Raw Audio"
-[4]: ~[https://arxiv.org/abs/2209.03143](https://arxiv.org/abs/2209.03143)~ "AudioLM: a Language Modeling Approach to Audio Generation"
-[5]: ~[https://arxiv.org/abs/2305.11000](https://arxiv.org/abs/2305.11000)~ "SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities"
-[6]: ~[https://arxiv.org/abs/2310.16338](https://arxiv.org/abs/2310.16338)~ "Generative Pre-training for Speech with Flow Matching"
-
+[1]: https://arxiv.org/abs/2305.15255 "Spoken Question Answering and Speech Continuation Using Spectrogram-Powered LLM"
+[2]: https://arxiv.org/abs/2402.05755 "SpiRit-LM: Interleaved Spoken and Written Language Model"
+[3]: https://arxiv.org/abs/2102.01192 "Generative Spoken Language Modeling from Raw Audio"
+[4]: https://arxiv.org/abs/2209.03143 "AudioLM: a Language Modeling Approach to Audio Generation"
+[5]: https://arxiv.org/abs/2305.11000 "SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities"
+[6]: https://arxiv.org/abs/2310.16338 "Generative Pre-training for Speech with Flow Matching"
 
 ## 方法
 针对中文特别是支持教育场景语汇的自监督预训练语音编码器的缺乏，我们基于 HuBERT 论文的方法开发了一个侧重语义信息的 SSL 语音编码器，并借鉴 RVQVAE 的方法，使用大量中文语音数据从头训练了侧重声学信息的音频编解码器（9层码本）。
+
 基于这些自监督预训练的编解码器，我们使用 qwen2 系列 LLM 模型作为初始化参数，在 FlowMirror-s v0.1 和 v0.2 平台上使用了 2 万小时和 5 万小时的语音数据进行端到端的预训练，并支持 ASR、TTS、语音续写、语音对话等任务。这些实验结果初步验证了语音端到端模型的可行性，并且显示出网络设计的可扩展性，预示着模型在后续版本中能够获得更强的能力。
 【TODO: 插入模型结构图】
 
@@ -45,53 +48,55 @@ AudioBench 的评估数据待添加
 * 当前版本还不支持多轮对话。
 * 推理速度还有非常大的探索空间。预计在针对 TensorRT 适配，以及一些其他流行技术的应用后，即使不考虑量化仍然有十几倍的加速空间存在。
 
-⠀
 ## 许可证
 由于在 v0.1 - v0.3 的自监督 Encoder 中使用了 WenetSpeech 的数据集，我们发布的自监督预训练语音 encoder 和端到端 checkpoint 仅限于学术使用。代码部分则遵循 Apache 2.0协议。
+
 为了促进中文及亚洲地区语言的语音模型探索，我们将整理采集的公域数据，排除 Wenet 数据后训练一个新的版本，开放可以更加自由使用的自监督编码器和编解码器。
 
-## Roadmap
+## 路径规划
+预计本项目的工作规划如下
+
 ### 2024-8
 **心流知镜-s v0.1 & 0.2 (5亿-15亿参数)**
-* 中文版自监督 audio codec
-* 心流知镜-s v0.1 & v0.2 (5亿-15亿 参数)
-* 基于 webrtc 的体验网站
-* 语音 & 文字 双输出
+- [x] 中文版自监督 audio codec
+- [x] 心流知镜-s v0.1 & v0.2 (5亿-15亿 参数)
+- [x] 基于 webrtc 的体验网站
+- [x] 语音 & 文字 双输出
 
 ⠀
 ### 2024-9
 **心流知镜-s v0.2**
-* 开源 checkpoint 和推理代码
-* 推理加速版本
-* 支持端侧部署
-* 开放自监督 speech encoder 和 Audio codec 权重和代码供学术使用
+- [ ] 开源 checkpoint 和推理代码
+- [ ] 推理加速版本
+- [ ] 支持端侧部署
+- [ ] 开放自监督 speech encoder 和 Audio codec 权重和代码供学术使用
 
 ⠀
 ### 2024-10
 **心流知镜-s v0.3**
-* 中小学科目教学增强
-* 支持对话Speaker语音选择
-* 语音 Expressive 表达（情绪、音量、高音、语速等）
+- [ ] 中小学科目教学增强
+- [ ] 支持对话Speaker语音选择
+- [ ] 语音 Expressive 表达（情绪、音量、高音、语速等）
 
 ⠀
 ### 2024-11
 **心流知镜-s v0.3-多语言版本**
-* 支持东亚地区及全球主流语言
-* 支持多语种交互对话
+- [ ] 支持东亚地区及全球主流语言
+- [ ] 支持多语种交互对话
 
 ⠀
 ### 2024-12
 **心流知镜-s v0.4**
-* 支持高品质的教育教学场景全双工对话
-* 更大参数量的模型尺寸
+- [ ] 支持高品质的教育教学场景全双工对话
+- [ ] 更大参数量的模型尺寸
 
 ⠀
 ### 2025-1
 **心流知镜-s v0.5**
-* 对于中国各地方言及口音的支持
+- [ ] 对于中国各地方言及口音的支持
 
 ⠀
-# 2025-3
+### 2025-3
 **心流知镜-s1**
-* 发布更大参数量的模型尺寸
-* 对于视觉能力的扩展
+- [ ] 发布更大参数量的模型尺寸
+- [ ] 对于视觉能力的扩展
