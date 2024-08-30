@@ -1,13 +1,11 @@
- [Update] 
- 
- 8.29 创建仓库， 发布 README & Roadmap
- 8.31 发布 Demo Site
- 9.3 发布 Inference Code & 心流知镜-s-v0.2-checkpoint-20240828
+[Update]  
+8.29 创建仓库， 发布 README & Roadmap  
+8.31 发布 Demo Site  
+9.3 发布 Inference Code & 心流知镜-s-v0.2-checkpoint-20240828  
 
 
 ## 动机
-尽管文本在互联网上是主要的语言形态，但许多场景如教学授课和医生问诊仍主要采用直接语音交流。此外，低龄儿童或不具备读写能力的人通过听说能力能够进行广泛的交流和表达，显示出纯语音交流具备足够的智能沟通能力。语音（Textless）交流天然包含丰富的表达信息，这在教育培训等场景中，相比纯粹的ASR文字转换，具有更高的信息价值。
-
+尽管文本在互联网上是主要的语言形态，但许多场景如教学授课和医生问诊仍主要采用直接语音交流。此外，低龄儿童或不具备读写能力的人通过听说能力能够进行广泛的交流和表达，显示出纯语音交流具备足够的智能沟通能力。语音（Textless）交流天然包含丰富的表达信息，这在教育培训等场景中，相比纯粹的ASR文字转换，具有更高的信息价值。  
 同时，本项目也受到 OpenAI 发布的 GPT-4o 和其展示的教育场景中的演示视频展现的能力的启发。
 
 
@@ -49,25 +47,13 @@ example_3 = "怎么把事情做对要花时间去培养"
 example_4 = "这里的药材长势不错"
 ```
 ### 对话语音例子
-对话例子1："人在没有目标的时候才应该有压力"
-<audio controls>
-  <source src="assets/question_example_1_MP3.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-<audio controls>
-  <source src="assets/answer_example_1_MP3.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+**对话例子1:** "人在没有目标的时候才应该有压力"  
+[输入](assets/question_example_1_MP3.mp3)  
+[输出](assets/answer_example_1_MP3.mp3)
 
-对话例子2："这里的药材长势不错"
-<audio controls>
-  <source src="assets/question_example_4_MP3.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-<audio controls>
-  <source src="assets/answer_example_4_MP3.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+**对话例子2:** "这里的药材长势不错"  
+[输入](assets/question_example_4_MP3.mp3)  
+[输出](assets/answer_example_4_MP3.mp3)
 
 ### Demo Site
 相应的 Demo 实际体验部署在 https://flow.jzx.ai ，限于资源有限，同时支持并发小于10。实际部署的 checkpoint 是 心流知镜-s v0.2-240822-checkpoint，后续会更新到 v0.2和 v0.3的最新的版本。
@@ -80,7 +66,7 @@ example_4 = "这里的药材长势不错"
 | WenetSpeech - test| 1024（采样） | 24.23%  |
 
 【TODO】
-AudioBench 的评估数据待添加
+AudioBench 的评估数据待添加  
 PS: 亟待构建中文版的 AudioBench 以便更好的综合评估
 
 
@@ -93,8 +79,7 @@ PS: 亟待构建中文版的 AudioBench 以便更好的综合评估
 
 
 ## 许可证
-由于在v0.1-v0.3的自监督Encoder中使用了WenetSpeech的数据集，我们发布的自监督预训练语音Encoder和端到端checkpoint权重文件仅限于学术使用。代码部分则遵循Apache 2.0协议。
-
+由于在v0.1-v0.3的自监督Encoder中使用了WenetSpeech的数据集，我们发布的自监督预训练语音Encoder和端到端checkpoint权重文件仅限于学术使用。代码部分则遵循Apache 2.0协议。  
 为了促进中文及亚洲地区语言的语音模型探索，我们将整理采集的公域数据，排除Wenet数据后训练一个新的版本，开放可以更加自由使用的自监督编码器和编解码器。
 
 
