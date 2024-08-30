@@ -1,6 +1,6 @@
 [Update]  
 8.29 创建仓库，发布README & Roadmap  
-8.31 发布Demo Site(https://flow.jzx.ai)  
+8.31 发布Demo Site(https://voice-playground.91jzx.cn)  
 9.12 发布Inference Code & 心流知镜-s-v0.2-checkpoint-20240828  
 
 
@@ -58,7 +58,7 @@ example_4 = "这里的药材长势不错"
 [输出](assets/answer_example_4_MP3.mp3)
 
 ### Demo Site
-相应的 Demo 实际体验部署在 https://flow.jzx.ai ，限于资源有限，同时支持并发小于10。实际部署的checkpoint是心流知镜-s v0.2-240822-checkpoint，后续会更新到v0.2和v0.3的最新的版本。
+相应的 Demo 实际体验部署在 https://voice-playground.91jzx.cn ，限于资源有限，同时支持并发小于10。实际部署的checkpoint是心流知镜-s v0.2-240822-checkpoint，后续会更新到v0.2和v0.3的最新的版本。
 
 ### 多任务评估
 在这里ASR子任务被看作是对于语音中蕴含的learnable semantic info在预训练阶段对此representation学习效果的一个评估。当前的checkpoint，在预训练的第一阶段观察到ASR子任务大约相当于Whisper-small的水平。所选取的评估数据，公开领域网上语音数据是未训练的数据，Wenet数据全部未参与端到端训练过程。从这两部分数据随机采样1024条进行评估。 
