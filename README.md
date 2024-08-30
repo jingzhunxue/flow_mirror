@@ -147,5 +147,5 @@ PS: 亟待构建中文版的AudioBench以便更好的综合评估
 
 
 ## 同行社群
-钉钉群：90720015617
+钉钉群：90720015617  
 <img src="assets/dingding_qrcode.png" alt="钉钉技术群二维码" width="200"/>
