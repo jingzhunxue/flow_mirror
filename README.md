@@ -1,6 +1,6 @@
 [Update]  
 8.29 创建仓库，发布README & Roadmap  
-8.31 发布Demo Site(https://flow.jzx.ai)
+8.31 发布Demo Site(https://flow.jzx.ai)  
 9.12 发布Inference Code & 心流知镜-s-v0.2-checkpoint-20240828  
 
 
@@ -30,6 +30,7 @@
 
 ## 方法
 总体来说，我们把语音端到端模型的预训练看作一个对于语音蕴含的semantic和acoustic信息的representation的学习过程。从文本LLM初始化额外带来了统一的学习到Text & Audio Representation的可能性，也大幅度减少了工程量。所以我们按照如下两步设计整体训练思路。  
+
 针对中文特别是支持教育场景语汇的自监督预训练语音编码器的缺乏，我们基于Meta HuBERT论文的方法开发了一个侧重语义信息的自监督语音编码器，并借鉴RVQVAE的方法，使用大量中文语音数据从头训练了侧重声学信息的音频编解码器（9层码本）。
 ![自监督音频Codec建模示意图](assets/flow_mirror_s_v02_ssl_codec.png)
 
@@ -57,7 +58,7 @@ example_4 = "这里的药材长势不错"
 [输出](assets/answer_example_4_MP3.mp3)
 
 ### Demo Site
-相应的 Demo 实际体验部署在 https://flow.jzx.ai，限于资源有限，同时支持并发小于10。实际部署的checkpoint是心流知镜-s v0.2-240822-checkpoint，后续会更新到v0.2和v0.3的最新的版本。
+相应的 Demo 实际体验部署在 https://flow.jzx.ai ，限于资源有限，同时支持并发小于10。实际部署的checkpoint是心流知镜-s v0.2-240822-checkpoint，后续会更新到v0.2和v0.3的最新的版本。
 
 ### 多任务评估
 在这里ASR子任务被看作是对于语音中蕴含的learnable semantic info在预训练阶段对此representation学习效果的一个评估。当前的checkpoint，在预训练的第一阶段观察到ASR子任务大约相当于Whisper-small的水平。所选取的评估数据，公开领域网上语音数据是未训练的数据，Wenet数据全部未参与端到端训练过程。从这两部分数据随机采样1024条进行评估。 
@@ -65,6 +66,7 @@ example_4 = "这里的药材长势不错"
 |-------------------|---------|---------|
 | 公开领域随机采样 - test   | 1024（采样） | 12.55%  |
 | WenetSpeech - test| 1024（采样） | 24.23%  |
+
 因为此次发布的checkpoint是早期epoch，随着后续的训练数据量和时间的增加，在不增加神经网络参数量的前提下语音语义和文本之间的对齐方面可以看到会有很大的提升。
 
 【TODO】
@@ -146,4 +148,4 @@ PS: 亟待构建中文版的AudioBench以便更好的综合评估
 
 ## 同行社群
 钉钉群：90720015617
-![钉钉技术群二维码](assets/dingding_qrcode.png)
+<img src="assets/dingding_qrcode.png" alt="钉钉技术群二维码" width="200"/>
