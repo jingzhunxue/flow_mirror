@@ -1,7 +1,8 @@
 [Update]  
 8.29 创建仓库，发布README & Roadmap  
 8.31 发布Demo Site(https://voice-playground.91jzx.cn)  
-9.12 发布Inference Code & 心流知镜-s-v0.2-checkpoint-20240828  
+9.2  发布Inference Code  
+9.12 心流知镜-s-v0.2-checkpoint-20240828  
 
 
 ## 动机
