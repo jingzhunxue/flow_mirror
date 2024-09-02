@@ -1,0 +1,10 @@
+{
+    "feat_dim": 80,
+    "embedding_size": 192,
+    "growth_rate": 32,
+    "bn_size": 4,
+    "init_channels": 128,
+    "config_str": "batchnorm-relu",
+    "memory_efficient": true,
+    "output_level": "segment"
+}
