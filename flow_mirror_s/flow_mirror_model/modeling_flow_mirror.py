@@ -33,7 +33,6 @@ from transformers.utils import (
     is_flash_attn_2_available,
     is_flash_attn_greater_or_equal_2_10,
     logging,
-    replace_return_docstrings,
 )
 
 from .configuration_flow_mirror import FlowmirrorConfig, FlowmirrorDecoderConfig
@@ -1056,7 +1055,7 @@ class FlowmirrorForCausalLM(FlowmirrorPreTrainedModel):
     def get_decoder(self):
         return self.model.decoder
 
-    @replace_return_docstrings(output_type=Seq2SeqLMOutput, config_class=_CONFIG_FOR_DOC)
+
     def forward(
         self,
         input_ids: torch.LongTensor = None,
@@ -1333,7 +1332,7 @@ class FlowmirrorForConditionalGeneration(PreTrainedModel):
 
         return super().from_pretrained(pretrained_model_name_or_path, *model_args, **kwargs)
 
-    @replace_return_docstrings(output_type=Seq2SeqLMOutput, config_class=_CONFIG_FOR_DOC)
+
     def forward(
         self,
         input_ids: Optional[torch.LongTensor] = None,
@@ -1523,7 +1522,12 @@ class FlowmirrorForConditionalGeneration(PreTrainedModel):
             decoder_input_ids = None
 
         # 2. Encoder-decoder models expect the `decoder_input_ids` to start with a special token. Let's ensure that.
-        decoder_start_token_id = self._get_decoder_start_token_id(decoder_start_token_id, bos_token_id)
+
+        assert decoder_start_token_id == bos_token_id, (
+            "Make sure that `decoder_start_token_id` is correctly defined and that it is the same as `bos_token_id`."
+            "Otherwise, the model will not behave as expected."
+        )
+
         if device is None:
             device = self.device
         decoder_input_ids_start = (
@@ -1897,6 +1901,10 @@ class FlowmirrorForConditionalGeneration(PreTrainedModel):
             logits_processor.append(ClassifierFreeGuidanceLogitsProcessor(generation_config.guidance_scale))
             generation_config.guidance_scale = None
 
+
+        generation_config._eos_token_tensor = None
+
+        
         # 9. prepare distribution pre_processing samplers
         logits_processor = self._get_logits_processor(
             generation_config=generation_config,
@@ -1931,7 +1939,9 @@ class FlowmirrorForConditionalGeneration(PreTrainedModel):
 
         elif is_sample_gen_mode:
             # 11. prepare logits warper
-            logits_warper = self._get_logits_warper(generation_config)
+
+            logits_warper = self._get_logits_warper(generation_config, self.device)
+
             # expand input_ids with `num_return_sequences` additional sequences per batch
             input_ids, model_kwargs = self._expand_inputs_for_generation(
                 input_ids=input_ids,
