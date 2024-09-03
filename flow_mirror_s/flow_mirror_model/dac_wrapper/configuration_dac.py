@@ -5,6 +5,7 @@ from typing import List
 class DACConfig(PretrainedConfig):
     model_type = "cac"
 
+
     def __init__(
         self,
         num_codebooks: int = 9,
