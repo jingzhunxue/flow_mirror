@@ -12,5 +12,5 @@ from .modeling_flow_mirror import (
 from .dac_wrapper import DACConfig, DACModel
 from transformers import AutoConfig, AutoModel
 
-AutoConfig.register("dac", DACConfig)
+AutoConfig.register("cac", DACConfig)
 AutoModel.register(DACConfig, DACModel)

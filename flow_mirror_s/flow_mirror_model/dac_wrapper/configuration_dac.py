@@ -3,7 +3,7 @@ from typing import List
 
 
 class DACConfig(PretrainedConfig):
-    model_type = "dac"
+    model_type = "cac"
 
     def __init__(
         self,
