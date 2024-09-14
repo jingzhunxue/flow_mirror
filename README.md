@@ -1,3 +1,11 @@
+(简体中文|[English](./README_en.md))
+
+
+[![huggingface](https://img.shields.io/badge/huggingface-ckpt-yellow)](https://huggingface.co/jzx-ai-lab/flow_mirror)
+[![modelscope](https://img.shields.io/badge/modelscope-ckpt-purple)](https://www.modelscope.cn/models/jzx-ai-lab/Flow_mirror)
+[![github](https://img.shields.io/badge/Github-code-black)](https://github.com/jingzhunxue/flow_mirror)
+[![license](https://img.shields.io/badge/license-Apache%202-blue)](./LICENSE)
+
 [Update]  
 8.29 创建仓库，发布README & Roadmap  
 8.31 发布Demo Site(https://voice-playground.91jzx.cn)  
