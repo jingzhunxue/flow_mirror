@@ -9,7 +9,9 @@
 8.29: Created repository, published README & Roadmap    
 8.31: Released Demo Site (https://voice-playground.91jzx.cn)    
 9.02: Released Inference Code   
-9.12: Released FlowMirror-s-v0.2-checkpoint-20240828    
+9.12: Released FlowMirror-s-v0.2-checkpoint-20240828   
+9.20: On-Device Inference supported by Sophgo.ai, Thanks!   
+9.30: Released Speech Tokenizer SQ Codec in Dual Language Chinese/English   
 
 
 ## Motivation
@@ -108,8 +110,8 @@ The project is planned as follows:
 **心流知镜-s v0.2**  
 - [x] Open-source [checkpoint](https://huggingface.co/jzx-ai-lab/flow_mirror) and inference code  
 - [ ] Accelerated inference version  
-- [ ] Support for on-device deployment  
-- [ ] Release self-supervised speech encoder and audio codec weights for academic use  
+- [x] Support for on-device deployment  
+- [x] Release self-supervised audio codec weights for academic use  
 
 ⠀
 ### October 2024
