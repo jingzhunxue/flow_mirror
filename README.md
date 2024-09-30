@@ -37,6 +37,7 @@ To the best of our knowledge, the earliest end-to-end voice models originated fr
 [3]: https://arxiv.org/abs/2209.03143 "AudioLM: a Language Modeling Approach to Audio Generation"
 [4]: https://arxiv.org/abs/2305.11000 "SpeechGPT: Empowering Large Language Models with Intrinsic Cross-Modal Conversational Abilities"
 [5]: https://arxiv.org/abs/2310.16338 "Generative Pre-training for Speech with Flow Matching"
+[6]: https://arxiv.org/abs/2408.13893 "SimpleSpeech 2: Towards Simple and Efficient Text-to-Speech with Flow-based Scalar Latent Transformer Diffusion Models"
 
 
 ## Methodology
