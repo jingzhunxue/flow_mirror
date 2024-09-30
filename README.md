@@ -31,6 +31,7 @@ To the best of our knowledge, the earliest end-to-end voice models originated fr
 - AudioLM: Borsos et al. (2023) proposed a language modeling approach to audio generation.[More Info][3]
 - SpeechGPT: Zhang et al. (2023) enhanced the cross-modal conversational capabilities of large language models.[More Info][4]
 - SpeechFlow:Liu et al. (2024) introduced a speech generation pretraining method using flow matching. [More Info][5]
+- SimpleSpeech2: Yang et al. (2024) proposed an efficient speech codec. [More Info][6]
 
 [1]: https://arxiv.org/abs/2402.05755 "SpiRit-LM: Interleaved Spoken and Written Language Model"
 [2]: https://arxiv.org/abs/2102.01192 "Generative Spoken Language Modeling from Raw Audio"
