@@ -11,6 +11,8 @@
 8.31 发布Demo Site(https://voice-playground.91jzx.cn)  
 9.2  发布Inference Code  
 9.12 心流知镜-s-v0.2-checkpoint-20240828  
+9.20: 感谢算能科技sophgo.com的端侧推理部署支持!   
+9.30: 发布了重新训练改善后的Speech Codec SQCodec代码，支持中英双语，checkpoint将放到huggingface.  
 
 
 ## 动机
@@ -109,10 +111,10 @@ PS: 亟待构建中文版的AudioBench以便更好的综合评估
 ⠀
 ### 2024-9
 **心流知镜-s v0.2**
-- [ ] 开源checkpoint和推理代码
+- [x] 开源checkpoint和推理代码
 - [ ] 推理加速版本
-- [ ] 支持端侧部署
-- [ ] 开放自监督speech encoder和Audio codec权重和代码供学术使用
+- [x] 支持端侧部署
+- [x] 开放自监督speech codec权重和代码供学术使用
 
 ⠀
 ### 2024-10
